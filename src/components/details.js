@@ -3,7 +3,6 @@ import superagent from 'superagent';
 
 
 function Details(props) {
- console.log('hiiiiii',props);
      const [movieReview, setMovieReview] = useState([])
     
   useEffect(() => {
@@ -11,14 +10,11 @@ function Details(props) {
     
         let url = `https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${props.fullDetails.Title}&api-key=3YeRygDn787ivX6AwxugmZASa1yEmGCR`;
         let result = await superagent(url); 
-        console.log(result)
         let review=[];
-         
         review = result.body.results;
-        console.log(review);
       setMovieReview(review);    
     })()
-  },[])
+  },[props.fullDetails.Title])
 
  
   return (
@@ -29,7 +25,7 @@ function Details(props) {
         return(
             <>
             <div className="topDetails">
-            <img src={props.fullDetails.Poster}></img>
+            <img alt="poster" src={props.fullDetails.Poster}></img>
             <div >
             <p className="toDetailInfo"><span className="headDesc">Title : </span>{props.fullDetails.Title}</p>
         <p className="toDetailInfo"><span className="headDesc">Year : </span> {props.fullDetails.Year}</p>
@@ -56,7 +52,7 @@ function Details(props) {
         )
       })
     : <div className="topDetails">
-    <img src={props.fullDetails.Poster}></img>
+    <img alt="poster " src={props.fullDetails.Poster}></img>
     <div >
     <p className="toDetailInfo"><span className="headDesc">Title : </span>{props.fullDetails.Title}</p>
 <p className="toDetailInfo"><span className="headDesc">Year : </span> {props.fullDetails.Year}</p>

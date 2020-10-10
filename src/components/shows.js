@@ -10,8 +10,8 @@ function Shows(props) {
   return (
     <>
     <div className="buttonDiv" >
-    <button className={`showButton ${type== 'movie' ? 'borderClass' : null}`} onClick={e =>setType('movie')}> Movies</button>
-    <button className={`showButton ${type== 'series' ? 'borderClass' : null}`}  onClick={e =>setType('series')}> Series</button>
+    <button className={`showButton ${type=== 'movie' ? 'borderClass' : null}`} onClick={e =>setType('movie')}> Movies</button>
+    <button className={`showButton ${type=== 'series' ? 'borderClass' : null}`}  onClick={e =>setType('series')}> Series</button>
     </div>
     <Suspense fallback={<div className="load">...Loading</div>}>
      <List fav={props.fav} setFav={props.setFav} type={type} search={props.search}  setFullDetails={props.setFullDetails}/>

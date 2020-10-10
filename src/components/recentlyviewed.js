@@ -35,6 +35,7 @@ import './style.css';
 useEffect(() =>{
     let favList=JSON.parse(localStorage.getItem('myFavMov')) || [];
    props.setFav(favList);
+   // eslint-disable-next-line
 },[])
 
 
@@ -63,7 +64,7 @@ function favDesplay(){
         {props.fav.map((res,i)=>{
         return(
              <div key={`${i}-res`} className="favList">
-            <img className="favImg" src={res}/>
+            <img alt="poster" className="favImg" src={res}/>
               </div>
         )
     })}

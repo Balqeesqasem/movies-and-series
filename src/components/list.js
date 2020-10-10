@@ -60,7 +60,7 @@ function List(props)  {
           <div className="titleOfMovie" >
           <p>{res.Title}</p>
           </div>            
-             <img  src={res.Poster}/>
+             <img  alt="poster" src={res.Poster}/>
         </ul>
       
         <div className="none" id={i}>
