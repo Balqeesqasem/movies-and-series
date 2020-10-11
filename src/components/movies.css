@@ -4,6 +4,7 @@
     width: 100%;
     justify-content: space-evenly;
     align-content: space-between;
+    position: relative;
 
 }
 
@@ -16,7 +17,7 @@
     width: 100%;
     padding: 0;
     margin: 0;
-    margin-bottom: 23px;
+    /* margin-bottom: 23px; */
     position: relative;
     display: flex;
     justify-content: center;
@@ -49,7 +50,7 @@
 /* } */
 
 
-.react-multiple-carousel__arrow::before {
+.react-multiple-Dousel__arrow::before {
     font-size: 75px;
     color: #FFEB3B;
     display: block;
@@ -159,9 +160,10 @@ i.fas.fa-angle-down {
 
 .block {
     display: block;
-    width: 374%;
-    position: relative;
-    right: 127%;
+    width: 100%;
+    position: absolute;
+    /* right: 127%; */
+    left: 0;
 
 }
 
@@ -177,8 +179,9 @@ i.fas.fa-sort-up {
     padding: 0;
     margin: 0;
     position: absolute;
-    top: -25px;
-    left: 44%;
+    left: 36%;
+    z-index: 99999;
+    top: 350px;
 }
 
 .seeMoreBtn {
@@ -254,6 +257,20 @@ img.favImg {
     bottom: -11px;
 }
 
+.arrowTest{
+    position: relative;
+}
+
+.react-multiple-carousel__arrow::before {
+    font-size: 85px;
+    color: yellow;
+    display: block;
+    font-family: revicons;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+
 @media only screen and (max-width: 540px){
     
     .detailsData {
@@ -320,6 +337,11 @@ img.favImg {
 
 div#favTrue {
     height: 175px;
+}
+
+.headerDisplay {
+    
+    width: 100%;
 }
 
 }

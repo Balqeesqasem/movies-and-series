@@ -37,13 +37,39 @@ function List(props)  {
    if( document.getElementsByClassName('block').length){
      document.getElementsByClassName('cardUl')[0].className = '';
      document.getElementsByClassName('block')[0].className='none';
+     document.getElementsByClassName(' fa-sort-up')[0].className='none';
+
     }
     document.getElementById(i).className='block';
+    document.getElementById(`${i}-cardUl`).className='cardUl';
+    document.getElementById(`${i}-arrow`).className='fas fa-sort-up';
+
     if(!props.fav.includes(poster)){
       props.setFav([...props.fav,poster]);
       localStorage.setItem('myFavMov', JSON.stringify(props.fav));
     }
-    document.getElementById(`${i}-cardUl`).className='cardUl';
+    // console.log(document.getElementById(`${i}-cardUl`).getBoundingClientRect() ,'hiiiiii');
+    // console.log(document.getElementById(`${i}-cardUl`).getBoundingClientRect().height ,'hiiiiii');
+    let top=document.getElementById(`${i}-cardUl`).getBoundingClientRect().height;
+    let count =1;
+    let ix=i;
+    // console.log(i , 'iiiiiiiiiiii' , ix,'ixxxxxxxxxx');
+    if(ix === 5){
+      count++;
+    }
+    else{
+      while(ix/5 >=1 && ix !== 0 ){
+        if(ix === 5){
+          break;
+        }
+        // console.log(count ,'hahhaahhahhhah', ix);
+         count++;
+         ix= ix-(ix-5);  
+      }
+    }
+    top = (top+40)*count;
+    // console.log(top , 'tooooooop ' , count , 'cooooont' , ix);
+    document.getElementsByClassName('block')[0].style.top= `${top}px`;
    }
 
 
@@ -53,9 +79,14 @@ function List(props)  {
 
 <div className="moviesDiv">
       {data.map((res,i) =>{
+
        return (
    
          <div className="card" key={`${i}-ms`} >
+            <span className="arrowTest">
+             <i id={`${i}-arrow`} className="none"></i>
+
+            </span>
          <ul id={`${i}-cardUl`} onClick={e=> popFunc(i,res.Poster)}>
           <div className="titleOfMovie" >
           <p>{res.Title}</p>
@@ -68,7 +99,6 @@ function List(props)  {
             <Popup  fullDetails={props.fullDetails}   setFullDetails={props.setFullDetails} imdbID={res.imdbID}/>
              </div>
          </div>
-
 
         )
       })}

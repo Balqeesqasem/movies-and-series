@@ -33,7 +33,7 @@ function Popup(props){
 return(
     <>
     <div>
-   <i className="fas fa-sort-up"></i>
+ 
     <div className="detailsOfPop" style={{ backgroundImage: `url(${popUp.Poster})` }}>
 
 <p className="border">{popUp.Title}</p>
