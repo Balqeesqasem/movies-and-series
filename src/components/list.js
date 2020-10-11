@@ -18,7 +18,7 @@ function List(props)  {
     
     useEffect(() => {
       (async function fetchData() {
-        let url = `http://www.omdbapi.com/?apikey=417aa991&s=${props.search}&type=${props.type}`;
+        let url = `https://www.omdbapi.com/?apikey=417aa991&s=${props.search}&type=${props.type}`;
         let result = await superagent(url); 
         let newData=[];
         if(result.body.Error){

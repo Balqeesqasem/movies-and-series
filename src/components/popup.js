@@ -13,7 +13,7 @@ function Popup(props){
   useEffect(() => {
     
     (async function fetchData() {
-      let url = `http://www.omdbapi.com/?apikey=417aa991&i=${props.imdbID}`;
+      let url = `https://www.omdbapi.com/?apikey=417aa991&i=${props.imdbID}`;
       let result = await superagent(url); 
       let movieData=[];
       movieData= result.body;
