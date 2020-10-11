@@ -25,8 +25,8 @@ function Details(props) {
         return(
             <>
             <div className="topDetails">
-            <img alt="poster" src={props.fullDetails.Poster}></img>
-            <div >
+            <img className="imgWidth" alt="poster" src={props.fullDetails.Poster}></img>
+            <div className="firstInfo">
             <p className="toDetailInfo"><span className="headDesc">Title : </span>{props.fullDetails.Title}</p>
         <p className="toDetailInfo"><span className="headDesc">Year : </span> {props.fullDetails.Year}</p>
         <p className="toDetailInfo"><span className="headDesc">Type :</span> {props.fullDetails.Type}</p>
@@ -52,8 +52,8 @@ function Details(props) {
         )
       })
     : <div className="topDetails">
-    <img alt="poster " src={props.fullDetails.Poster}></img>
-    <div >
+    <img className="imgWidth" alt="poster " src={props.fullDetails.Poster}></img>
+    <div  className="firstInfo">
     <p className="toDetailInfo"><span className="headDesc">Title : </span>{props.fullDetails.Title}</p>
 <p className="toDetailInfo"><span className="headDesc">Year : </span> {props.fullDetails.Year}</p>
 <p className="toDetailInfo"><span className="headDesc">Type :</span> {props.fullDetails.Type}</p>

@@ -80,14 +80,20 @@
 /* ul.react-multi-carousel-track {
     width: 100%;
 } */
+/* */
+
 
 .react-multi-carousel-list {
+    top: -60px;
     left: 2%;
-}
+} 
 
 .viewd {
     color: white;
     padding: 2%;
+    position: absolute;
+    top: 90px;
+    z-index: 999;
 }
 
 
@@ -119,6 +125,7 @@ i.fas.fa-angle-down {
 
 .form {
     position: relative;
+    z-index: 999;
 }
 
 .input {
@@ -192,6 +199,7 @@ i.fas.fa-sort-up {
 .topDetails {
     display: flex;
     padding: 5%;
+    width: 100%;
 }
 
 
@@ -204,6 +212,7 @@ span.headDesc {
 .toDetailInfo {
     color: white;
     padding: 4%;
+    line-height: 210%;
     /* border: 2px solid yellow; */
 }
 
@@ -220,4 +229,97 @@ span.headDesc {
 
 .load {
     color: white;
+}
+
+.firstInfo{
+    width: 70%;
+    border-top: 2px solid yellow;
+    border-right: 2px solid;
+    border-bottom: solid 2px;
+}
+ul.react-multi-carousel-track {
+    width: 5%;
+    position: relative;
+    top: 123px;
+    height: 434px;
+}
+
+img.favImg {
+    padding-right: 15px;
+    height: 218px;
+}
+
+.searchContainee {
+    position: relative;
+    bottom: -11px;
+}
+
+@media only screen and (max-width: 540px){
+    
+    .detailsData {
+        display: block;
+    }
+
+    .moviesDiv img {
+        height: 120px;
+    }
+
+    img.favImg {
+        padding-right: 0;
+        padding-left: 12px;
+        height: 135px;
+    
+    }
+
+
+    .titleOfMovie {
+      
+        top: 74px;
+        font-size: 10px;
+      
+   }
+
+   ul.react-multi-carousel-track {
+    width: 5%;
+    position: relative;
+    top: 134px;
+    height: 306px;
+}
+
+
+
+
+
+.react-multiple-carousel__arrow::before {
+    font-size: 48px;
+    color: #FFEB3B;
+    display: block;
+    font-family: revicons;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    top: 46px;
+ 
+}
+.buttonDiv {
+    padding: 2%;
+    position: relative;
+    top: 19px;
+}
+
+.viewd {
+  
+    top: 55px;
+   
+}
+
+.react-multi-carousel-list {
+    top: -100px;
+    left: 2%;
+}
+
+div#favTrue {
+    height: 175px;
+}
+
 }
